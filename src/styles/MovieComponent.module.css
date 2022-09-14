@@ -1,0 +1,73 @@
+.overLayTitle{
+    width: 150px;
+    height: 250px;
+    background: rgba(5, 5, 5, 0.575);
+    position: absolute;
+    color: white;
+    padding: 5px 10px;
+}
+.heart{
+    text-align: right;
+    margin: 2px 2px 90px 2px;
+}
+.detailsCon{
+    display: flex;
+}
+.movieTitle{
+    font-size: 70px;
+    width: 50vw;
+}
+.movieTitleCon{
+    margin-right: auto;
+
+}
+.imdb{
+    background: rgb(165, 100, 3);
+    padding: 5px;
+    color: black;
+    font-weight: bold;
+    display: inline-block;
+    border-radius: 2px;
+    margin-right: 5px;
+
+}
+.imdbNumber{
+    color: white;
+    display: inline-block;
+
+}
+/* .imdbCon{
+    border: 1px solid gray;
+    height: ;
+
+} */
+.plot{
+    width: 30vw;
+    font-size: 18px;
+
+}
+.plotHeader{
+    color: rgb(166, 166, 173);
+    margin: 20px 0px;
+}
+.xcancel{
+ 
+    margin: 40px 0px;
+}
+.coverImage{
+    object-fit: cover;
+    width: 40vw;
+  height: 650px;
+  border-radius: 20px;
+}
+.arrow{
+    display: inline-block;
+    width: 30px;
+    cursor: pointer;
+}
+.plot2{
+    width: 30vw;
+    font-size: 18px;
+    display: inline-block;
+    margin-right: 10px;
+}
