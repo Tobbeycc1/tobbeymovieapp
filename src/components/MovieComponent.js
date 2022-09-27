@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import classes from '../styles/MovieComponent.module.css'
-import heart from '../images/icon-heart-white.png'
+import classes from "../styles/MovieComponent.module.css";
+import heart from "../images/icon-heart-white.png";
 
 const MovieContainer = styled.div`
   display: flex;
   flex-direction: column;
   padding: 2px;
   width: 150px;
-  
+
   cursor: pointer;
 `;
 const CoverImage = styled.img`
@@ -42,32 +42,29 @@ const MovieInfo = styled.span`
 `;
 const MovieComponent = (props) => {
   const { Title, Year, imdbID, Type, Poster } = props.movie;
-  const {showOverlay, setShowOverlay} =useState(false)
- const overlayDisplays = <div className={classes.overLayTitle}>
- <img src={heart} alt= 'heart icon' className={classes.heart}/>
- <h3>icon-heart-white.png</h3>
-</div>
+  const { showOverlay, setShowOverlay } = useState(false);
+  const overlayDisplays = (
+    <div className={classes.overLayTitle}>
+      <img src={heart} alt="heart icon" className={classes.heart} />
+      <h3>icon-heart-white.png</h3>
+    </div>
+  );
 
- function overlay() {
-  setShowOverlay(true)
-  console.log('showing');
- }
+  function overlay() {
+    setShowOverlay(true);
+    console.log("showing");
+  }
 
   return (
-    
     <MovieContainer
       onClick={() => {
         props.onMovieSelect(imdbID);
         window.scrollTo({ top: 0, behavior: "smooth" });
       }}
-
       onMouseOver={overlay}
     >
-     
-      <CoverImage src={Poster} alt={Title} onMouseOver={overlay}/>
+      <CoverImage src={Poster} alt={Title} onMouseOver={overlay} />
       {showOverlay && overlayDisplays}
-      
-
 
       {/* <MovieName>{Title}</MovieName>
       <InfoColumn>

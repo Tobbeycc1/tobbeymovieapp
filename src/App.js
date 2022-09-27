@@ -3,72 +3,31 @@ import Axios from "axios";
 import styled from "styled-components";
 import MovieComponent from "./components/MovieComponent";
 import MovieInfoComponent from "./components/MovieInfoComponent";
-import logo from '../src/images/logo.png'
-import rottenTomaoes from '../src/images/illustration-empty-state.png'
-import classes from '../src/styles/logo.module.css'
+import logo from "../src/images/logo.png";
+import rottenTomaoes from "../src/images/illustration-empty-state.png";
+import classes from "../src/styles/styles.module.css";
+import { FiSearch } from "react-icons/fi";
 
 export const API_KEY = "a9118a3a";
 
 const Container = styled.div`
-  
-  padding:60px;
+  padding: 60px;
 `;
-const AppName = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-`;
-const Header = styled.div`
-  background-color: black;
-  color: white;
-  // display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-  align-items: center;
-  padding: 10px;
-  font-size: 25px;
-  font-weight: bold;
 
-`;
-const SearchBox = styled.div`
-  // display: flex;
-  padding: 10px 10px;
-  border-radius: 10px;
-  width: 100%;
-  background-color: white;
-`;
-const SearchIcon = styled.img`
-  width: 32px;
-  height: 32px;
-  vertical-align: middle;
-`;
 const MovieImage = styled.img`
   width: 48px;
   height: 48px;
   margin: 15px;
 `;
-const SearchInput = styled.input`
-  color: black;
-  font-size: 16px;
-  font-weight: bold;
-  border: none;
-  outline: none;
-  margin-left: 15px;
-  width: 60vw;
-`;
+
 const MovieListContainer = styled.div`
   display: flex;
-  // flex-direction: row;
-   flex-wrap: wrap;
-  padding: 30px;
-  gap: 15px;
-  // justify-content: space-evenly;;
-`;
-const Placeholder = styled.img`
-  width: 120px;
-  height: 120px;
-  margin: 150px;
-  opacity: 50%;
+  flex-wrap: wrap;
+  // padding: 30px;
+  margin-top: 20px;
+  gap: 10px;
+  // justify-content: space-evenly;
+  align-items: center;
 `;
 
 function App() {
@@ -81,13 +40,13 @@ function App() {
 
   const fetchData = async (searchString) => {
     const response = await Axios.get(
-      `https://www.omdbapi.com/?s=${searchString}&apikey=${API_KEY}`,
+      `https://www.omdbapi.com/?s=${searchString}&apikey=${API_KEY}`
     );
     updateMovieList(response.data.Search);
   };
 
   const onTextChange = (e) => {
-    onMovieSelect("")
+    onMovieSelect("");
     clearTimeout(timeoutId);
     updateSearchQuery(e.target.value);
     const timeout = setTimeout(() => fetchData(e.target.value), 500);
@@ -95,24 +54,29 @@ function App() {
   };
   return (
     <Container>
+      <header className={classes.header}>
+        <div className={classes.logoCon}>
+          <img src={logo} alt="logo" className={classes.logo} />
+        </div>
 
-      <Header>
-       <div className={classes.logoCon}>
-        
-       <img src= {logo} alt= 'logo' className={classes.logo}/>
-       </div>
-      
-       
-        <SearchBox style={{display: 'block'}}>
-          <SearchIcon src="/react-movie-app/search-icon.svg" />
-          <SearchInput
+        <div className={classes.searchBarCon}>
+          <FiSearch className={classes.searchIcon} />
+
+          <input
+            type={"text"}
             placeholder="Search Movie"
             value={searchQuery}
             onChange={onTextChange}
+            className={classes.searchBar}
           />
-        </SearchBox>
-      </Header>
-      {selectedMovie && <MovieInfoComponent selectedMovie={selectedMovie} onMovieSelect={onMovieSelect}/>}
+        </div>
+      </header>
+      {selectedMovie && (
+        <MovieInfoComponent
+          selectedMovie={selectedMovie}
+          onMovieSelect={onMovieSelect}
+        />
+      )}
       <MovieListContainer>
         {movieList?.length ? (
           movieList.map((movie, index) => (
@@ -123,7 +87,9 @@ function App() {
             />
           ))
         ) : (
-          <Placeholder src={rottenTomaoes} />
+          <div className={classes.placeholderCon}>
+            <img src={rottenTomaoes} className={classes.placeholder} />
+          </div>
         )}
       </MovieListContainer>
     </Container>
