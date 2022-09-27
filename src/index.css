@@ -19,3 +19,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+/* For Tablet */
+@media screen and (max-width: 999px) {
+  body {
+    padding: 20px 40px;
+  }
+}
+
+/* For Mobile */
+@media screen and (max-width: 540px) {
+  body {
+    padding: 10px 20px;
+  }
+}
