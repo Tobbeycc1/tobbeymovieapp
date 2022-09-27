@@ -2,7 +2,7 @@
 
 ### Demo - Deployed over Github Pages
 
-https://vercel.com/tobbeycc1/tobbeymovieapp-fl9l
+https://tobbeymovieapp-fl9l.vercel.app/
 
 ### APIs Used
 
