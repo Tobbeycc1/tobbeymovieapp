@@ -1,73 +1,96 @@
-.overLayTitle{
-    width: 150px;
-    height: 250px;
-    background: rgba(5, 5, 5, 0.575);
-    position: absolute;
-    color: white;
-    padding: 5px 10px;
+.detailsCon {
+  display: flex;
+  padding: 30px;
+  align-items: center;
 }
-.heart{
-    text-align: right;
-    margin: 2px 2px 90px 2px;
+.movieTitle {
+  font-size: 70px;
+  width: 50vw;
 }
-.detailsCon{
-    display: flex;
+.movieTitleCon {
+  margin-right: auto;
 }
-.movieTitle{
-    font-size: 70px;
-    width: 50vw;
+.imdb {
+  background: rgb(165, 100, 3);
+  padding: 5px;
+  color: black;
+  font-weight: bold;
+  display: inline-block;
+  border-radius: 2px;
+  margin-right: 5px;
 }
-.movieTitleCon{
-    margin-right: auto;
-
-}
-.imdb{
-    background: rgb(165, 100, 3);
-    padding: 5px;
-    color: black;
-    font-weight: bold;
-    display: inline-block;
-    border-radius: 2px;
-    margin-right: 5px;
-
-}
-.imdbNumber{
-    color: white;
-    display: inline-block;
-
+.imdbNumber {
+  color: white;
+  display: inline-block;
 }
 /* .imdbCon{
     border: 1px solid gray;
     height: ;
 
 } */
-.plot{
-    width: 30vw;
-    font-size: 18px;
-
+.plot {
+  width: 30vw;
+  font-size: 18px;
 }
-.plotHeader{
-    color: rgb(166, 166, 173);
-    margin: 20px 0px;
+.plotHeader {
+  color: rgb(166, 166, 173);
+  margin: 20px 0px;
 }
-.xcancel{
- 
-    margin: 40px 0px;
+.xcancel {
+  margin: 40px 0px;
 }
-.coverImage{
-    object-fit: cover;
-    width: 40vw;
+.coverImage {
+  object-fit: cover;
+  width: 40vw;
   height: 650px;
   border-radius: 20px;
 }
-.arrow{
-    display: inline-block;
-    width: 30px;
-    cursor: pointer;
+.arrow {
+  display: inline-block;
+  font-size: 30px;
+  cursor: pointer;
+  margin-right: 50px;
 }
-.plot2{
-    width: 30vw;
-    font-size: 18px;
-    display: inline-block;
-    margin-right: 10px;
+.plot2 {
+  width: 30vw;
+  font-size: 18px;
+  display: inline-block;
+  margin-right: 10px;
+}
+.movieComponentCon {
+  display: inline-block;
+  margin-top: 50px;
+  margin-right: auto;
+  margin-left: auto;
+  cursor: pointer;
+}
+.poster,
+.overLayTitleCon {
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+.posterModalCon {
+  color: red;
+}
+.overLayTitleCon {
+  background: rgba(5, 5, 5, 0.575);
+  position: absolute;
+  color: white;
+  padding: 15px 10px;
+}
+.heart {
+  font-size: 20px;
+}
+.heart:hover {
+  color: red;
+  transform: scale(1.3);
+}
+.overlayTitle {
+  font-weight: bold;
+  font-size: 25px;
+  position: absolute;
+  bottom: 20px;
+  width: 90%;
 }

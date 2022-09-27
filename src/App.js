@@ -10,26 +10,6 @@ import { FiSearch } from "react-icons/fi";
 
 export const API_KEY = "a9118a3a";
 
-const Container = styled.div`
-  padding: 60px;
-`;
-
-const MovieImage = styled.img`
-  width: 48px;
-  height: 48px;
-  margin: 15px;
-`;
-
-const MovieListContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  // padding: 30px;
-  margin-top: 20px;
-  gap: 10px;
-  // justify-content: space-evenly;
-  align-items: center;
-`;
-
 function App() {
   const [searchQuery, updateSearchQuery] = useState("");
 
@@ -53,7 +33,7 @@ function App() {
     updateTimeoutId(timeout);
   };
   return (
-    <Container>
+    <div>
       <header className={classes.header}>
         <div className={classes.logoCon}>
           <img src={logo} alt="logo" className={classes.logo} />
@@ -77,12 +57,13 @@ function App() {
           onMovieSelect={onMovieSelect}
         />
       )}
-      <MovieListContainer>
+      <div className={classes.fetchedMovies}>
         {movieList?.length ? (
           movieList.map((movie, index) => (
             <MovieComponent
               key={index}
               movie={movie}
+              overlayTitle={"abc"}
               onMovieSelect={onMovieSelect}
             />
           ))
@@ -91,8 +72,8 @@ function App() {
             <img src={rottenTomaoes} className={classes.placeholder} />
           </div>
         )}
-      </MovieListContainer>
-    </Container>
+      </div>
+    </div>
   );
 }
 

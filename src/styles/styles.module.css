@@ -53,3 +53,7 @@
 .placeholder {
   width: 150px;
 }
+.fetchedMovies {
+  display: flex;
+  flex-wrap: wrap;
+}
