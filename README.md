@@ -1,7 +1,5 @@
 # Tobbey's React Movie App - ReactJS Projects
 
-![](movie.gif)
-
 ### Demo - Deployed over Github Pages
 
 https://ayushkul.github.io/react-movie-app
