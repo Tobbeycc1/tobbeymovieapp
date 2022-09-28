@@ -40,13 +40,18 @@
 .placeholderCon {
   text-align: center;
   width: 100vw;
-  display: block;
+  display: flex;
   /* background: red; */
   align-self: center;
   margin-top: 50px;
+  height: 50vh;
+  align-items: center;
+  justify-content: center;
 }
 .placeholder {
-  width: 150px;
+  width: fit-content;
+  height: 200px;
+  object-fit: cover;
 }
 .fetchedMovies {
   display: flex;

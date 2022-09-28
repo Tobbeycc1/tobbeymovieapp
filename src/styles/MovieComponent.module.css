@@ -69,7 +69,7 @@
   width: 200px;
   height: 300px;
   object-fit: cover;
-  border-radius: 20px;
+  border-radius: 1.5vw;
 }
 .posterModalCon {
   color: red;
@@ -93,4 +93,22 @@
   position: absolute;
   bottom: 20px;
   width: 90%;
+}
+/* For Tablet */
+@media screen and (max-width: 999px) {
+  .poster,
+  .overLayTitleCon {
+    border-radius: 20px;
+  }
+}
+
+/* For Mobile */
+@media screen and (max-width: 540px) {
+  .poster,
+  .overLayTitleCon {
+    width: 85vw;
+    height: 100vw;
+    object-fit: cover;
+    border-radius: 4.83vw;
+  }
 }
